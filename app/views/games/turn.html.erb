@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Games</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%if @game_state.current_player == 'X'%>
+    <p><%= @game_state.board%></p>
+    <form action="/game/turn" method="get">
+    <label for="q">Search for:</label>
+    <input id="q" name="game" type="text" />
+    <input type="submit" value="Search" />
+    </form>
+    <%else%>
+      <% link_to "game/turn"%>
+    <%end%>
+    <!-- <%# @games.each do |game| %>
+      <tr>
+        <td><%#= link_to 'Show', game %></td>
+        <td><%#= link_to 'Edit', edit_game_path(game) %></td>
+        <td><%#= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%# end %> -->
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Game', new_game_path %>

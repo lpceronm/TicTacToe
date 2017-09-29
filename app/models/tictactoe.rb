@@ -122,13 +122,11 @@ class Game
       @game_state = @game_state.next_move
       puts "X's move:"
       render_board
-      turn
     else
       get_human_move
       puts "The result of your move:"
       render_board
       puts ""
-      turn
     end
   end
 
@@ -142,6 +140,7 @@ class Game
       end
     end
     puts output
+    turn
   end
 
   def get_human_move
